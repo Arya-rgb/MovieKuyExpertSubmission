@@ -41,5 +41,8 @@ class SettingFragment : Fragment() {
             requireActivity().recreate()
         }
     }
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
