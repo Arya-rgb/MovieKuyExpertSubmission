@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="image_description">image movoe</string>
+    <string name="text_primary">movie</string>
+    <string name="text_release">release date</string>
+</resources>

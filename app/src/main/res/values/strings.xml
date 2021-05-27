@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MovieKuy</string>
+
+    <string name="menu_home">Movie Home</string>
+    <string name="menu_settings">Setting</string>
+    <string name="title_activity_menu">MainActivity</string>
+    <string name="title_home">Movie Home</string>
+    <string name="title_favorite">My Favorite</string>
+    <string name="Setting">Setting</string>
+    <string name="title_activity_detail_movie">Loading…</string>
+    <string name="floating_action_button_untuk_share">Floating Action Button</string>
+    <string name="foto_untuk_movie_detail">movie detail photos</string>
+    <string name="movieRate">movierate</string>
+    <string name="movie_name">movie_name</string>
+    <string name="deskripsi_film">Overview</string>
+    <string name="popularity">Popularity</string>
+    <string name="movie_favorite">Movie Favorite</string>
+    <string name="turn_on_dark_mode">Turn on dark mode</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="poster_image_detail">poster image detail</string>
+</resources>
