@@ -44,6 +44,8 @@ dependencies {
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
     implementation 'com.airbnb.android:lottie:3.7.0'
 
+    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
 
 
 }
