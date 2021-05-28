@@ -9,6 +9,7 @@ import com.thorin.core.domain.model.Film
 import com.thorin.ngemovieeuy.R
 import com.thorin.ngemovieeuy.databinding.ActivityDetailMovieBinding
 import com.thorin.ngemovieeuy.databinding.ContentScrollingBinding
+import com.thorin.ngemovieeuy.databinding.FragmentHomeBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailMovieActivity : AppCompatActivity() {
@@ -17,18 +18,22 @@ class DetailMovieActivity : AppCompatActivity() {
         const val EXTRA_DATA = "extra_data"
     }
 
-    private lateinit var binding: ActivityDetailMovieBinding
-    private lateinit var contentBinding: ContentScrollingBinding
+    private var _binding: ActivityDetailMovieBinding? = null
+    private val binding get() = _binding!!
+
+    private var _binding2: ContentScrollingBinding? = null
+    private val bindingDetail get() = _binding2!!
+
     private val detailFilmViewModel: DetailMovieViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityDetailMovieBinding.inflate(layoutInflater)
+        _binding = ActivityDetailMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
-        contentBinding = binding.detailMovie
+        _binding2 = binding.detailMovie
 
         val detailMovie = intent.getParcelableExtra<Film>(EXTRA_DATA)
         showMovieDetail(detailMovie)
@@ -46,13 +51,13 @@ class DetailMovieActivity : AppCompatActivity() {
 
             Glide.with(this@DetailMovieActivity)
                 .load("https://image.tmdb.org/t/p/w185/${detailFilm.poster_path}")
-                .into(contentBinding.image)
+                .into(bindingDetail.image)
 
-            contentBinding.releaseDate.text = detailFilm.release_date
-            contentBinding.movieRateDetail.text = StringBuilder("Rate ${detailFilm.vote_average} From ${detailFilm.vote_count} Users")
-            contentBinding.populariry.text = StringBuilder("Popularity ${detailFilm.popularity}")
-            contentBinding.titleMovie.text = detailFilm.title
-            contentBinding.overview.text = detailFilm.overview
+            bindingDetail.releaseDate.text = detailFilm.release_date
+            bindingDetail.movieRateDetail.text = StringBuilder("Rate ${detailFilm.vote_average} From ${detailFilm.vote_count} Users")
+            bindingDetail.populariry.text = StringBuilder("Popularity ${detailFilm.popularity}")
+            bindingDetail.titleMovie.text = detailFilm.title
+            bindingDetail.overview.text = detailFilm.overview
 
             var statusFavorite = detailFilm.isFavorite
             setStatusFavorite(statusFavorite)
