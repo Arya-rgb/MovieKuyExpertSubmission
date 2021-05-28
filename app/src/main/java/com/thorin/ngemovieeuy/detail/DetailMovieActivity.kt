@@ -9,7 +9,6 @@ import com.thorin.core.domain.model.Film
 import com.thorin.ngemovieeuy.R
 import com.thorin.ngemovieeuy.databinding.ActivityDetailMovieBinding
 import com.thorin.ngemovieeuy.databinding.ContentScrollingBinding
-import com.thorin.ngemovieeuy.databinding.FragmentHomeBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailMovieActivity : AppCompatActivity() {
